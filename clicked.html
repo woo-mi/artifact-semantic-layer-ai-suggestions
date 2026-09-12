@@ -15,18 +15,19 @@
     font-synthesis: none; overflow-wrap: anywhere;
   }
   * { box-sizing: border-box; }
-  .app { display: flex; align-items: stretch; margin-left: 48px; padding-top: 48px; }
-  .chat { width: 440px; min-width: 260px; flex-shrink: 1; position: relative;
-           min-height: calc(100vh - 48px); }
-  .center { flex: 1; min-width: 0; display: flex; flex-direction: column;
-             min-height: calc(100vh - 48px); }
-  .right { width: 308px; min-height: calc(100vh - 48px); }
+  .app { display: flex; align-items: stretch; margin-left: 48px; padding-top: 48px;
+          height: 100vh; min-height: 760px; }
+  .chat { width: 440px; min-width: 260px; flex-shrink: 1; position: relative; }
+  .center { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .canvas { flex: 1; min-height: 200px; display: flex; align-items: center;
+             justify-content: center; padding: 24px 31px; }
+  .right { width: 308px; }
   @media (max-width: 1180px) { .chat { width: 320px; } }
   @media (max-width: 980px) {
-    .app { flex-wrap: wrap; }
-    .center { order: 1; flex-basis: 100%; min-height: 0; }
-    .center > div:first-child { margin-top: 48px; }
-    .right { order: 2; flex-basis: 100%; width: 100%; min-height: 0; height: 420px;
+    .app { flex-wrap: wrap; height: auto; min-height: 0; }
+    .center { order: 1; flex-basis: 100%; }
+    .canvas { min-height: 300px; }
+    .right { order: 2; flex-basis: 100%; width: 100%; height: 420px;
               border-left: none !important; border-top: 0.5px solid #D4D4D4; }
     .chat { order: 3; flex-basis: 100%; width: 100%; min-height: 420px;
              border-right: none !important; border-top: 1px solid #D4D4D4; }
@@ -167,7 +168,7 @@
       </div>
 <div class="app">
   <div class="chat">
-<div style="background-color: #FFFFFF; border-right-color: #D4D4D4; border-right-style: solid; border-right-width: 1px; box-sizing: border-box; overflow: clip; width: 100%">
+<div style="background-color: #FFFFFF; border-right-color: #D4D4D4; border-right-style: solid; border-right-width: 1px; box-sizing: border-box; overflow: clip; width: 100%; height: 100%">
         <div style="align-items: start; box-sizing: border-box; display: flex; left: 18px; right: 18px; position: absolute; bottom: 18px; width: auto">
           <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; min-height: 120px; justify-content: center; position: relative; width: 100%">
             <div style="background-color: color(display-p3 0.832 0.832 0.832); border-radius: 25px; box-sizing: border-box; height: calc(100% + 2px); left: 0; opacity: 0.55; position: absolute; right: 0; top: -1px"></div>
@@ -223,8 +224,10 @@
       </div>
   </div>
   <div class="center">
-<div style="background-image: url(./diagram.png); background-position: 54.167% 23.867%; background-repeat: no-repeat; background-size: 106.277%; box-sizing: border-box; width: 100%; max-width: 577px; aspect-ratio: 577 / 213; margin: 136px auto 0"></div>
-<div style="background-color: #FFFFFF; border-top-color: #D4D4D4; border-top-style: solid; border-top-width: 0.5px; box-sizing: border-box; height: 476px; overflow-x: auto; overflow-y: clip; width: 712px; position: relative; width: 100%; max-width: 712px; margin-top: auto">
+    <div class="canvas">
+<div style="background-image: url(./diagram.png); background-position: 54.167% 23.867%; background-repeat: no-repeat; background-size: 106.277%; box-sizing: border-box; width: 100%; max-width: 577px; aspect-ratio: 577 / 213"></div>
+    </div>
+<div style="background-color: #FFFFFF; border-top-color: #D4D4D4; border-top-style: solid; border-top-width: 0.5px; box-sizing: border-box; height: 476px; overflow-x: auto; overflow-y: clip; width: 712px; position: relative; width: 100%; flex-shrink: 0">
         <div style="align-items: start; box-sizing: border-box; display: flex; left: 0; position: absolute; top: 7.5px">
           <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; width: 31px">
             <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; grid-column-end: issues; grid-column-start: issues; justify-content: center; padding-block: 10px; padding-inline: 6px">
@@ -605,7 +608,7 @@
       </div>
   </div>
   <div class="right">
-<div style="background-color: #FFFFFF; border-left-color: #D4D4D4; border-left-style: solid; border-left-width: 0.5px; box-sizing: border-box; height: 952px; overflow: clip; width: 308px; position: relative; flex-shrink: 0">
+<div style="background-color: #FFFFFF; border-left-color: #D4D4D4; border-left-style: solid; border-left-width: 0.5px; box-sizing: border-box; overflow: clip; width: 308px; position: relative; flex-shrink: 0; height: 100%">
         <div style="box-sizing: border-box; height: 184.5px; left: 7.5px; position: absolute; top: 48px; width: 308px">
           <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 500; left: 13px; line-height: 18px; position: absolute; top: 0">
             Domains
